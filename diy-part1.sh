@@ -17,6 +17,7 @@
 git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
 rm -rf package/lean/luci-app-jd-dailybonus
 git clone https://github.com/jerrykuku/luci-app-jd-dailybonus package/luci-app-jd-dailybonus
+svn co https://github.com/openwrt/packages/trunk/utils/qemu /packages/utils/qemu
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
 # git clone https://github.com/garypang13/luci-theme-edge package/luci-theme-edge -b 18.06
 
@@ -271,6 +272,7 @@ CONFIG_PACKAGE_libcap-bin=y
 # CONFIG_PACKAGE_ip6tables-mod-nat=y
 CONFIG_PACKAGE_iptables-mod-extra=y
 CONFIG_PACKAGE_ttyd=y
+CONFIG_PACKAGE_qemu-ga=y
 EOF
 
 # 其他软件包:
