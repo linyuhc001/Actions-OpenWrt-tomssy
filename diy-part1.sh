@@ -14,11 +14,12 @@
 
 # 添加第三方软件包
 # git clone https://github.com/kenzok8/openwrt-packages package/openwrt-packages
-git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
-rm -rf package/lean/luci-app-jd-dailybonus
-git clone https://github.com/jerrykuku/luci-app-jd-dailybonus package/luci-app-jd-dailybonus
-svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
+# git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
+# rm -rf package/lean/luci-app-jd-dailybonus
+# git clone https://github.com/jerrykuku/luci-app-jd-dailybonus package/luci-app-jd-dailybonus
+# svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
 # git clone https://github.com/garypang13/luci-theme-edge package/luci-theme-edge -b 18.06
+svn co https://github.com/linkease/istore/trunk/luci/luci-app-store package/luci-app-store
 
 # qemu添加关机
 # curl -o tools/qemu/patches/0013-qga-invoke-separate-applets-for-guest-shutdown-modes.patch https://github.com/openwrt/packages/blob/master/utils/qemu/patches/0007-qga-invoke-separate-applets-for-guest-shutdown-modes.patch
