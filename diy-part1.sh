@@ -19,7 +19,7 @@
 # git clone https://github.com/jerrykuku/luci-app-jd-dailybonus package/luci-app-jd-dailybonus
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
 # git clone https://github.com/garypang13/luci-theme-edge package/luci-theme-edge -b 18.06
-svn co https://github.com/linkease/istore/trunk/luci/luci-app-store package/luci-app-store
+# svn co https://github.com/linkease/istore/trunk/luci/luci-app-store package/luci-app-store
 
 # qemu添加关机
 # curl -o tools/qemu/patches/0013-qga-invoke-separate-applets-for-guest-shutdown-modes.patch https://github.com/openwrt/packages/blob/master/utils/qemu/patches/0007-qga-invoke-separate-applets-for-guest-shutdown-modes.patch
@@ -148,7 +148,7 @@ CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
 # CONFIG_PACKAGE_luci-app-eqos is not set #IP限速
 # CONFIG_PACKAGE_luci-app-smartdns is not set #smartdns服务器
 # CONFIG_PACKAGE_luci-app-adguardhome is not set #ADguardhome
-CONFIG_PACKAGE_luci-app-store=y #istore
+# CONFIG_PACKAGE_luci-app-store=y #istore
 EOF
 
 # ShadowsocksR插件:
