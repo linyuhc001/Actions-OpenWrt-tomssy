@@ -180,8 +180,8 @@ EOF
 # CONFIG_PACKAGE_kcptun-client=y
 # CONFIG_PACKAGE_chinadns-ng=y
 # CONFIG_PACKAGE_haproxy=y
-CONFIG_PACKAGE_v2ray=y
-CONFIG_PACKAGE_v2ray-plugin=y
+# CONFIG_PACKAGE_v2ray=y
+# CONFIG_PACKAGE_v2ray-plugin=y
 # CONFIG_PACKAGE_simple-obfs=y
 # CONFIG_PACKAGE_trojan-plus=y
 # CONFIG_PACKAGE_trojan-go=y
@@ -208,7 +208,7 @@ CONFIG_PACKAGE_luci-app-filetransfer=y #系统-文件传输
 CONFIG_PACKAGE_luci-app-autoreboot=y #定时重启
 CONFIG_PACKAGE_luci-app-upnp=y #通用即插即用UPnP(端口自动转发)
 # CONFIG_PACKAGE_luci-app-accesscontrol is not set #上网时间控制
-# CONFIG_PACKAGE_luci-app-wol is not set #网络唤醒
+CONFIG_PACKAGE_luci-app-wol=y #网络唤醒
 CONFIG_PACKAGE_luci-app-frps=y
 CONFIG_PACKAGE_luci-app-frpc=y #Frp内网穿透
 CONFIG_PACKAGE_luci-app-nlbwmon=y #宽带流量监控
