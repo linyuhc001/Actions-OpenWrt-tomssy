@@ -17,7 +17,7 @@
 # git clone https://github.com/tty228/luci-app-serverchan package/luci-app-serverchan
 # rm -rf package/lean/luci-app-jd-dailybonus
 # git clone https://github.com/jerrykuku/luci-app-jd-dailybonus package/luci-app-jd-dailybonus
-svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
+#svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
 # git clone https://github.com/garypang13/luci-theme-edge package/luci-theme-edge -b 18.06
 # svn co https://github.com/linkease/istore/trunk/luci/luci-app-store package/luci-app-store
 
@@ -30,7 +30,7 @@ git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-ar
 
 # 替换更新passwall和ssrplus+
 # rm -rf package/openwrt-packages/luci-app-passwall && svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-app-passwall package/openwrt-packages/luci-app-passwall
-# rm -rf package/openwrt-packages/luci-app-ssr-plus && svn co https://github.com/fw876/helloworld package/openwrt-packages/helloworld
+rm -rf package/openwrt-packages/luci-app-ssr-plus && svn co https://github.com/fw876/helloworld package/openwrt-packages/helloworld
 
 # 添加passwall依赖库
 # git clone https://github.com/kenzok8/small package/small
@@ -142,7 +142,7 @@ EOF
 # 第三方插件选择:
 cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-oaf=y #应用过滤
-CONFIG_PACKAGE_luci-app-openclash=y #OpenClash
+#CONFIG_PACKAGE_luci-app-openclash=y #OpenClash
 #CONFIG_PACKAGE_luci-app-jd-dailybonus=y #京东签到
 CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
 # CONFIG_PACKAGE_luci-app-eqos is not set #IP限速
