@@ -7,6 +7,8 @@
 # 更新feeds文件
 # sed -i 's@#src-git helloworld@src-git helloworld@g' feeds.conf.default #启用helloworld
 # cat feeds.conf.default
+echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
+echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 
 # 更新并安装源
 ./scripts/feeds clean
@@ -20,17 +22,20 @@
 #svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
 # git clone https://github.com/garypang13/luci-theme-edge package/luci-theme-edge -b 18.06
 # svn co https://github.com/linkease/istore/trunk/luci/luci-app-store package/luci-app-store
+#Add vssr
+git clone https://github.com/jerrykuku/lua-maxminddb.git package/lean/lua-maxminddb
+git clone https://github.com/jerrykuku/luci-app-vssr.git package/lean/luci-app-vssr
 
 # qemu添加关机
 # curl -o tools/qemu/patches/0013-qga-invoke-separate-applets-for-guest-shutdown-modes.patch https://github.com/openwrt/packages/blob/master/utils/qemu/patches/0007-qga-invoke-separate-applets-for-guest-shutdown-modes.patch
 
 # 替换更新默认argon主题
-rm -rf package/lean/luci-theme-argon && git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon -b 18.06
+rm -rf feeds/luci/themes/luci-theme-argon && git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon -b 18.06
 git clone https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 
 # 替换更新passwall和ssrplus+
 # rm -rf package/openwrt-packages/luci-app-passwall && svn co https://github.com/xiaorouji/openwrt-package/trunk/lienol/luci-app-passwall package/openwrt-packages/luci-app-passwall
-rm -rf package/openwrt-packages/luci-app-ssr-plus && svn co https://github.com/fw876/helloworld package/openwrt-packages/helloworld
+# rm -rf package/openwrt-packages/luci-app-ssr-plus && svn co https://github.com/fw876/helloworld package/openwrt-packages/helloworld
 
 # 添加passwall依赖库
 # git clone https://github.com/kenzok8/small package/small
