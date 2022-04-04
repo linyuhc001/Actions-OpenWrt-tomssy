@@ -95,6 +95,7 @@ cat >> .config <<EOF
 CONFIG_TARGET_x86=y
 CONFIG_TARGET_x86_64=y
 CONFIG_TARGET_x86_64_Generic=y
+CONFIG_DEFAULT_autocore-x86=y
 EOF
 
 # 设置固件大小:
@@ -115,8 +116,14 @@ EOF
 
 # IPv6支持:
 # cat >> .config <<EOF
-# CONFIG_PACKAGE_dnsmasq_full_dhcpv6 is not set
-# CONFIG_PACKAGE_ipv6helper is not set
+CONFIG_KERNEL_IPV6=y
+CONFIG_KERNEL_IPV6_MULTIPLE_TABLES=y
+CONFIG_KERNEL_IPV6_SUBTREES=y
+CONFIG_KERNEL_IPV6_MROUTE=y
+# CONFIG_KERNEL_IPV6_PIMSM_V2 is not set
+CONFIG_KERNEL_IPV6_SEG6_LWTUNNEL=y
+CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
+CONFIG_PACKAGE_ipv6helper=y
 # EOF
 
 # 编译VMware镜像以及镜像填充	
@@ -147,8 +154,8 @@ EOF
 # 第三方插件选择:
 cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-oaf=y #应用过滤
-#CONFIG_PACKAGE_luci-app-openclash=y #OpenClash
-#CONFIG_PACKAGE_luci-app-jd-dailybonus=y #京东签到
+# CONFIG_PACKAGE_luci-app-openclash=y #OpenClash
+# CONFIG_PACKAGE_luci-app-jd-dailybonus=y #京东签到
 CONFIG_PACKAGE_luci-app-serverchan=y #微信推送
 # CONFIG_PACKAGE_luci-app-eqos is not set #IP限速
 # CONFIG_PACKAGE_luci-app-smartdns is not set #smartdns服务器
@@ -159,9 +166,30 @@ EOF
 # ShadowsocksR插件:
 cat >> .config <<EOF
 CONFIG_PACKAGE_luci-app-ssr-plus=y
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun is not set
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_NaiveProxy is not set
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_IPT2Socks is not set
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Redsocks2 is not set
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Libev_Client=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Libev_Server=y
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Client is not set
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Rust_Server is not set
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Libev_Client=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Libev_Server=y
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Simple_Obfs is not set
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
-CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
+# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray_Plugin is not set
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Xray=y
+EOF
+
+# vssr插件:
+cat >> .config <<EOF
+CONFIG_PACKAGE_luci-app-vssr=y
+CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Xray=y
+CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Trojan=y
+# CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Kcptun is not set
+CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Xray_plugin=y
+CONFIG_PACKAGE_luci-app-vssr_INCLUDE_ShadowsocksR_Libev_Server=y
 EOF
 
 # Passwall插件:
@@ -230,9 +258,9 @@ CONFIG_PACKAGE_luci-i18n-ttyd-zh-cn=y
 # CONFIG_PACKAGE_luci-app-amule is not set #电驴离线下载
 # CONFIG_PACKAGE_luci-app-xlnetacc is not set #迅雷快鸟
 # CONFIG_PACKAGE_luci-app-hd-idle is not set #磁盘休眠
-CONFIG_PACKAGE_luci-app-unblockmusic=y #解锁网易云灰色歌曲
-CONFIG_UnblockNeteaseMusic_Go=y
-CONFIG_UnblockNeteaseMusic_NodeJS=y
+CONFIG_PACKAGE_luci-app-unblockmusic=y #解锁网易云
+CONFIG_PACKAGE_luci-app-unblockmusic_INCLUDE_UnblockNeteaseMusic_Go=y
+CONFIG_PACKAGE_luci-app-unblockmusic_INCLUDE_UnblockNeteaseMusic_NodeJS=y
 CONFIG_PACKAGE_luci-i18n-unblockmusic-zh-cn=y
 # CONFIG_PACKAGE_luci-app-airplay2 is not set #Apple AirPlay2音频接收服务器
 # CONFIG_PACKAGE_luci-app-music-remote-center is not set #PCHiFi数字转盘遥控
