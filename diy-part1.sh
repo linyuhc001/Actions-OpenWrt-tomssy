@@ -22,9 +22,12 @@ echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.co
 #svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
 # git clone https://github.com/garypang13/luci-theme-edge package/luci-theme-edge -b 18.06
 # svn co https://github.com/linkease/istore/trunk/luci/luci-app-store package/luci-app-store
+
 #Add vssr
 git clone https://github.com/jerrykuku/lua-maxminddb.git package/lean/lua-maxminddb
 git clone https://github.com/jerrykuku/luci-app-vssr.git package/lean/luci-app-vssr
+=======
+
 
 # qemu添加关机
 # curl -o tools/qemu/patches/0013-qga-invoke-separate-applets-for-guest-shutdown-modes.patch https://github.com/openwrt/packages/blob/master/utils/qemu/patches/0007-qga-invoke-separate-applets-for-guest-shutdown-modes.patch
